@@ -7,112 +7,88 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f7fa;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
       text-align: center;
-      color: #003366;
+      padding: 20px;
     }
     form {
-      background-color: #fff;
+      background: white;
+      padding: 20px;
       max-width: 400px;
       margin: 30px auto;
-      padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    label {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-    }
     input {
       width: 100%;
-      padding: 8px;
       margin-top: 5px;
+      padding: 8px;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
     button {
-      margin-top: 15px;
-      width: 100%;
       background-color: #007bff;
       color: white;
+      padding: 10px;
       border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      width: 100%;
+      cursor: pointer;
+    }
+    button:hover { background-color: #0056b3; }
+    .resultado {
+      background-color: #e6f7ff;
+      margin-top: 20px;
       padding: 10px;
       border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    #resultado {
-      background-color: #eaf3ff;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 20px auto;
-      max-width: 400px;
-      display: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
-  <h1>Optimización de Buses - Centro Memoria</h1>
-  
-  <form id="formulario">
-    <label for="totalBuses">Buses disponibles:</label>
-    <input type="number" name="totalBuses" id="totalBuses" required>
+  <h1>Optimización de Buses - Estación Centro Memoria</h1>
 
-    <label for="d0">Demanda K10:</label>
-    <input type="number" name="d0" id="d0" required>
+  <form id="form">
+    <label>Total de buses:</label>
+    <input type="number" id="totalBuses" required>
 
-    <label for="d1">Demanda L10:</label>
-    <input type="number" name="d1" id="d1" required>
-
-    <label for="d2">Demanda J73:</label>
-    <input type="number" name="d2" id="d2" required>
+    <label>Demanda de pasajeros:</label>
+    <input type="number" id="demanda" required>
 
     <button type="submit">Calcular</button>
   </form>
 
-  <div id="resultado"></div>
+  <div id="resultado" class="resultado"></div>
 
   <script>
-    document.getElementById('formulario').addEventListener('submit', function(e) {
+    document.getElementById('form').addEventListener('submit', function(e) {
       e.preventDefault();
-
       const totalBuses = parseFloat(document.getElementById('totalBuses').value);
-      const demandas = [
-        parseFloat(document.getElementById('d0').value),
-        parseFloat(document.getElementById('d1').value),
-        parseFloat(document.getElementById('d2').value)
+      const demanda = parseFloat(document.getElementById('demanda').value);
+
+      // Aquí simulamos el cálculo del método Gauss y el tiempo mínimo
+      const cap1 = 160, cap2 = 250, cap3 = 160;
+      const A = [
+        [1, 1, 1],
+        [cap1, cap2, cap3]
       ];
+      const b = [totalBuses, demanda];
 
-      const totalDemanda = demandas.reduce((a, b) => a + b, 0);
-      const resultadoDiv = document.getElementById('resultado');
+      // Resolución manual tipo Gauss
+      const x3 = 0; // suposición básica para reducir el sistema
+      const x2 = (b[1] - b[0]*cap1) / (cap2 - cap1); 
+      const x1 = b[0] - x2 - x3;
 
-      if (totalDemanda === 0) {
-        resultadoDiv.innerHTML = "<b>Error:</b> la demanda total no puede ser cero.";
-        resultadoDiv.style.display = "block";
-        return;
-      }
+      // Calcular tiempo mínimo estimado (similar a Símplex)
+      const tiempoMin = 6*x1 + 4*x2 + 5*x3;
 
-      // Calcula la proporción de buses por ruta
-      let resultado = "<h3>Distribución de Buses</h3>";
-      for (let i = 0; i < demandas.length; i++) {
-        const proporcion = demandas[i] / totalDemanda;
-        const busesAsignados = Math.round(proporcion * totalBuses);
-        resultado += `<p><b>Ruta ${['K10','L10','J73'][i]}:</b> ${busesAsignados} buses</p>`;
-      }
-
-      resultadoDiv.innerHTML = resultado;
-      resultadoDiv.style.display = "block";
+      document.getElementById('resultado').innerHTML = `
+        <h3>Resultado</h3>
+        <p>🚌 Buses tipo 1 (articulados): <b>${x1.toFixed(2)}</b></p>
+        <p>🚌 Buses tipo 2 (bi-articulados): <b>${x2.toFixed(2)}</b></p>
+        <p>🚌 Buses tipo 3 (mixtos): <b>${x3.toFixed(2)}</b></p>
+        <p>⏱️ Tiempo mínimo total estimado: <b>${tiempoMin.toFixed(2)} minutos</b></p>
+      `;
     });
   </script>
 </body>
 </html>
-
-
