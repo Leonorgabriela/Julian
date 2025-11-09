@@ -65,3 +65,4 @@ function mostrarResultado(x, rutas) {
   resultado.innerHTML = html;
 }
 
+
