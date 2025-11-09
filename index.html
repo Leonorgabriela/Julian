@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Asignación de Buses - Versión Web</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distribución de Buses - Gauss Jordan</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>🚍 Sistema de Asignación de Buses</h1>
+    <h1>🚍 Distribución de Buses (Método Gauss-Jordan)</h1>
 
-    <div class="input-section">
-      <label>Demanda (personas por estación, separadas por coma):</label>
-      <input id="demanda" placeholder="Ej: 120,200,150" />
+    <div class="form">
+      <label for="total">Buses totales:</label>
+      <input type="number" id="total" placeholder="Ej: 20">
 
-      <label>Buses disponibles por estación (separadas por coma):</label>
-      <input id="buses" placeholder="Ej: 3,5,4" />
-
-      <label>Costos por bus (separados por coma):</label>
-      <input id="costos" placeholder="Ej: 10,15,12" />
+      <label>Demanda por ruta:</label>
+      <div class="routes">
+        <div>
+          <span>K10:</span>
+          <input type="number" id="demanda0" placeholder="Ej: 10">
+        </div>
+        <div>
+          <span>L10:</span>
+          <input type="number" id="demanda1" placeholder="Ej: 15">
+        </div>
+        <div>
+          <span>J73:</span>
+          <input type="number" id="demanda2" placeholder="Ej: 5">
+        </div>
+      </div>
 
       <button id="calcular">Calcular Asignación</button>
     </div>
 
-    <div class="result-section">
-      <h2>Resultados</h2>
-      <div id="resultado"></div>
-    </div>
+    <div class="resultado" id="resultado"></div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
