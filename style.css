@@ -1,68 +1,97 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #121212;
-  color: #f8f8f8;
+  background-color: #1a0000; /* rojo oscuro elegante */
+  color: #fffbea; /* blanco amarillento suave */
   margin: 0;
   padding: 0;
 }
 
+/* Caja principal */
 .container {
   max-width: 600px;
   margin: 40px auto;
-  background: #2b0000;
+  background: #2c0202; /* rojo vino profundo */
   border-radius: 15px;
   padding: 30px;
-  box-shadow: 0 0 20px rgba(80, 0, 0, 0.6);
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.3); /* sombra amarilla brillante */
 }
 
+/* Título principal */
 h1 {
   text-align: center;
-  color: #ffdddd;
+  color: #ffcc00; /* amarillo intenso */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
+/* Contenedor de formulario */
 .form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
+/* Caja de rutas */
 .routes div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #3d0000;
+  background: #3b0000; /* rojo más fuerte */
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 5px;
+  border: 1px solid #ffcc00; /* borde dorado */
 }
 
+/* Entradas */
 input {
   width: 100px;
   padding: 8px;
-  border: none;
+  border: 2px solid #ffcc00;
   border-radius: 8px;
   text-align: center;
+  background: #fffbea;
+  color: #1a0000;
+  font-weight: bold;
 }
 
+/* Botones */
 button {
-  background-color: #8b0000;
-  color: white;
+  background: linear-gradient(90deg, #ff0000, #ffcc00);
+  color: #ffffff;
   font-size: 16px;
   border: none;
   border-radius: 10px;
   padding: 12px;
   cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
   transition: 0.3s;
 }
 
 button:hover {
-  background-color: #b30000;
+  background: linear-gradient(90deg, #ffcc00, #ff0000);
+  transform: scale(1.05);
 }
 
+/* Caja de resultados */
 .resultado {
   margin-top: 25px;
-  background: #1e0000;
+  background: #260000;
   border-radius: 10px;
   padding: 15px;
   text-align: center;
+  border: 1px solid #ffcc00;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+  color: #ffffff;
 }
+
+/* Animación suave al aparecer */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container, .resultado, button {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
