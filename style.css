@@ -1,49 +1,38 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fff8e6; /* fondo clarito, beige con tono amarillo suave */
-  color: #2b0000; /* texto rojo vino oscuro */
+  background-color: #fff9e6;   /* fondo claro cálido */
+  color: #3a0000;              /* texto vino oscuro */
   margin: 0;
   padding: 0;
 }
 
-/* Contenedor principal */
 .container {
   max-width: 600px;
   margin: 40px auto;
-  background: #fffdf7; /* fondo blanco cálido */
+  background: #fffdf8;
   border-radius: 15px;
   padding: 30px;
-  box-shadow: 0 0 25px rgba(255, 193, 7, 0.3); /* brillo dorado */
-  border: 2px solid #ffd54f; /* borde amarillo suave */
+  box-shadow: 0 0 25px rgba(255, 193, 7, 0.25);
+  border: 2px solid #ffd54f;
 }
 
-/* Título */
 h1 {
   text-align: center;
-  color: #b71c1c; /* rojo elegante */
-  text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+  color: #b71c1c;
+  text-shadow: 0 0 8px rgba(255, 230, 150, 0.5);
 }
 
-/* Sección del formulario */
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* Cada fila de rutas */
 .routes div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ffe9c6; /* amarillo pastel */
+  background: #fff0cc;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 5px;
-  border: 1px solid #ffb300; /* borde dorado */
+  border: 1px solid #ffb300;
 }
 
-/* Entradas de texto */
 input {
   width: 100px;
   padding: 8px;
@@ -51,11 +40,10 @@ input {
   border-radius: 8px;
   text-align: center;
   background: #fffbea;
-  color: #2b0000;
+  color: #3a0000;
   font-weight: bold;
 }
 
-/* Botones */
 button {
   background: linear-gradient(90deg, #d32f2f, #ffca28);
   color: #fffdf7;
@@ -65,7 +53,6 @@ button {
   padding: 12px;
   cursor: pointer;
   font-weight: bold;
-  letter-spacing: 0.5px;
   transition: 0.3s;
 }
 
@@ -74,23 +61,15 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Resultados */
 .resultado {
   margin-top: 25px;
-  background: #fff0cc; /* fondo suave amarillo */
+  background: #fff7dc;
   border-radius: 10px;
   padding: 15px;
   text-align: center;
   border: 1px solid #ffb300;
   color: #4a0000;
   font-weight: 600;
-  box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
-}
-
-/* Animación */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .container, .resultado, button {
