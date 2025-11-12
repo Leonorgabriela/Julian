@@ -1,91 +1,93 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #1a0000; /* rojo oscuro elegante */
-  color: #fffbea; /* blanco amarillento suave */
+  background-color: #fff8e6; /* fondo clarito, beige con tono amarillo suave */
+  color: #2b0000; /* texto rojo vino oscuro */
   margin: 0;
   padding: 0;
 }
 
-/* Caja principal */
+/* Contenedor principal */
 .container {
   max-width: 600px;
   margin: 40px auto;
-  background: #2c0202; /* rojo vino profundo */
+  background: #fffdf7; /* fondo blanco cálido */
   border-radius: 15px;
   padding: 30px;
-  box-shadow: 0 0 25px rgba(255, 204, 0, 0.3); /* sombra amarilla brillante */
+  box-shadow: 0 0 25px rgba(255, 193, 7, 0.3); /* brillo dorado */
+  border: 2px solid #ffd54f; /* borde amarillo suave */
 }
 
-/* Título principal */
+/* Título */
 h1 {
   text-align: center;
-  color: #ffcc00; /* amarillo intenso */
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  color: #b71c1c; /* rojo elegante */
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
 }
 
-/* Contenedor de formulario */
+/* Sección del formulario */
 .form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* Caja de rutas */
+/* Cada fila de rutas */
 .routes div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #3b0000; /* rojo más fuerte */
+  background: #ffe9c6; /* amarillo pastel */
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 5px;
-  border: 1px solid #ffcc00; /* borde dorado */
+  border: 1px solid #ffb300; /* borde dorado */
 }
 
-/* Entradas */
+/* Entradas de texto */
 input {
   width: 100px;
   padding: 8px;
-  border: 2px solid #ffcc00;
+  border: 2px solid #b71c1c;
   border-radius: 8px;
   text-align: center;
   background: #fffbea;
-  color: #1a0000;
+  color: #2b0000;
   font-weight: bold;
 }
 
 /* Botones */
 button {
-  background: linear-gradient(90deg, #ff0000, #ffcc00);
-  color: #ffffff;
+  background: linear-gradient(90deg, #d32f2f, #ffca28);
+  color: #fffdf7;
   font-size: 16px;
   border: none;
   border-radius: 10px;
   padding: 12px;
   cursor: pointer;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   transition: 0.3s;
 }
 
 button:hover {
-  background: linear-gradient(90deg, #ffcc00, #ff0000);
+  background: linear-gradient(90deg, #ffca28, #d32f2f);
   transform: scale(1.05);
 }
 
-/* Caja de resultados */
+/* Resultados */
 .resultado {
   margin-top: 25px;
-  background: #260000;
+  background: #fff0cc; /* fondo suave amarillo */
   border-radius: 10px;
   padding: 15px;
   text-align: center;
-  border: 1px solid #ffcc00;
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
-  color: #ffffff;
+  border: 1px solid #ffb300;
+  color: #4a0000;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
 }
 
-/* Animación suave al aparecer */
+/* Animación */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -94,4 +96,5 @@ button:hover {
 .container, .resultado, button {
   animation: fadeIn 0.6s ease-in-out;
 }
+
 
