@@ -1,52 +1,64 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fff9e6;   /* fondo claro cálido */
-  color: #3a0000;              /* texto vino oscuro */
+  background-color: #fdf8f3; /* blanco beige cálido */
+  color: #0a1a2f; /* azul oscuro elegante para contraste */
   margin: 0;
   padding: 0;
 }
 
+/* Contenedor principal */
 .container {
   max-width: 600px;
   margin: 40px auto;
-  background: #fffdf8;
+  background: #ffffff; /* fondo del panel */
   border-radius: 15px;
   padding: 30px;
-  box-shadow: 0 0 25px rgba(255, 193, 7, 0.25);
-  border: 2px solid #ffd54f;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+  border: 2px solid #cfe8fa; /* azul pastel sutil */
 }
 
+/* Título */
 h1 {
   text-align: center;
-  color: #b71c1c;
-  text-shadow: 0 0 8px rgba(255, 230, 150, 0.5);
+  color: #0d47a1; /* azul medio profundo */
+  text-shadow: 0 0 6px rgba(173, 216, 230, 0.6);
 }
 
+/* Formulario */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Bloques de rutas */
 .routes div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff0cc;
+  background: #e8f3ff; /* azul muy claro */
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 5px;
-  border: 1px solid #ffb300;
+  border: 1px solid #b3daff;
 }
 
+/* Campos de entrada */
 input {
   width: 100px;
   padding: 8px;
-  border: 2px solid #b71c1c;
+  border: 2px solid #64b5f6;
   border-radius: 8px;
   text-align: center;
-  background: #fffbea;
-  color: #3a0000;
+  background: #f5fbff;
+  color: #0a1a2f;
   font-weight: bold;
 }
 
+/* Botones */
 button {
-  background: linear-gradient(90deg, #d32f2f, #ffca28);
-  color: #fffdf7;
+  background: linear-gradient(90deg, #4fc3f7, #81d4fa);
+  color: #ffffff;
   font-size: 16px;
   border: none;
   border-radius: 10px;
@@ -57,19 +69,27 @@ button {
 }
 
 button:hover {
-  background: linear-gradient(90deg, #ffca28, #d32f2f);
+  background: linear-gradient(90deg, #0288d1, #4fc3f7);
   transform: scale(1.05);
 }
 
+/* Resultado */
 .resultado {
   margin-top: 25px;
-  background: #fff7dc;
+  background: #e3f2fd; /* azul clarito */
   border-radius: 10px;
   padding: 15px;
   text-align: center;
-  border: 1px solid #ffb300;
-  color: #4a0000;
+  border: 1px solid #90caf9;
+  color: #0d47a1;
   font-weight: 600;
+  box-shadow: 0 0 10px rgba(144, 202, 249, 0.2);
+}
+
+/* Animación sutil */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .container, .resultado, button {
